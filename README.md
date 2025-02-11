@@ -55,3 +55,24 @@ since approaching sentences and text as "1D images" has proven useful so far:
 
 2- Layers to freeze or unfreeze?
   Freeze the early layers, unfreeze the middle and later layers. I would say start with maybe the first 25% of the model frozen and the rest unfrozen.
+
+3- The rationale.
+  The benefit of transfer learning is that you start with a trained and functional model of the bat. According to my research, a popular transfer learning strategy
+  in language processing is to take a "broad" model and train it to focus on more specific topics. We can do this with the freezing technique I mentioned in point 2.
+  As you progress through the layers of the model, patterns learned by the model gradually shift from general to specific. So, if you want to steer the model towards
+  learning for a specific tasks, you really want to focus on updating the later layers.
+
+
+Task 4: Training Loop
+
+I did my own training for the sentence classification portion of Task 2A. Granted, due to limited data, it isn't very robust, but it's functional.
+The idea was pretty straightforward: We have 2 classes of data, one for sentences talking about pistachio nuts, the other for sentences talking about trucks.
+They are labelled and then packaged as a data loader. The actual design of the network is VERY fast and loose and I know for a fact it isn't optimal, but given
+that this is my first time working with natural language processing, the limited training data, as well as the time limit, I kept it simple.
+Learning rate is high due to low epoch count and a lack of batching/sampling. This will result in extreme overfitting, but given that the input data was designed
+to be as "black and white" as possible, the model is still functional.
+
+
+My approach to the assessment was very fast and loose, and I understand the end result is a little messy and incomplete, but as stated before this is my first
+time working with NLP and sentence transformers and I learned a lot! I was able to take my academic knowledge of the image classification CNN's I worked on and
+apply those ideas to a new machine learning task and this was definitely a valuable experience for me. Thank you for taking the time to read this wall of text!
